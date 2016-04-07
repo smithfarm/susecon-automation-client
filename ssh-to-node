@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ "$#" -ne 1 ]; then
+    echo "usage: ssh-to-node \$IP_ADDR"
+    exit 1
+fi
+if ping -c 1 -W 1 $1 >/dev/null 2>&1 ; then
+   PKG_ETC=/etc/susecon-automation-client
+   source /etc/sysconfig/susecon-automation-client
+   ssh -i $PKG_ETC/keys/$HANDSON_KEYNAME-d$HANDSON_DELEGATE root@$1
+else
+   echo "IP address $1 is not pingable"
+fi
