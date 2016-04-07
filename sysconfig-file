@@ -1,0 +1,11 @@
+## Description:    Keyname from aws.yaml
+## Type:           string
+## Default:        ""
+#
+HANDSON_KEYNAME="smithfarm"
+
+## Description:    Keyname from aws.yaml
+## Type:           integer(0:)
+## Default:        1
+#
+HANDSON_DELEGATE=1
